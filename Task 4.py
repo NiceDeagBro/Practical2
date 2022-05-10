@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from 
+from .Task3 import Item, Food
 
 @dataclass
 class Customer:
