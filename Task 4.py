@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
-from .Task3 import Item, Food
+from Task3 import Food, Drink
+
 
 @dataclass
 class Customer:
@@ -14,7 +15,7 @@ class Customer:
 		self.__name = name
 		self.__shopping_list = shopping_list
 		Customer.__numberOfCustomers += 1
-		self.__id = (Customer.__numberOfCustomers -1) + 1
+		self.__id = (Customer.__numberOfCustomers - 1) + 1
 
 	# method returning id of an instance
 	def get_identifier(self):
@@ -47,3 +48,6 @@ class Customer:
 	@staticmethod
 	def get_number_of_customers():
 		return "Number of customers is " + str(Customer.__numberOfCustomers)
+
+
+c1 = Customer("Jonas Jonaitis", [Food("Bread", 2, 1.3), Drink("CocaCola", 3, 1.7)])
