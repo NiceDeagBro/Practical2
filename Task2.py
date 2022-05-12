@@ -19,3 +19,7 @@ class Item:                                                     # class Item des
         self.dict['count'] = self.count                         # key 'name' count name of the count
         self.dict['price'] = self.price                         # key 'name' price name of the price
         return self.dict                                        # returns keys and its values
+
+i1 = Item("Carrots")
+i2 = Item("Milk", 2, 1.5)
+i3 = Item("Bread", price=0.5)
