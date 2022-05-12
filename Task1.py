@@ -7,8 +7,8 @@ class Customer:
 	__numberOfCustomers: int = field(default=0, repr=False)
 	__id: int = field(default=0, repr=False)
 	__dateOfBirth: str = field(default="Not assigned", repr=False)
-	__nationality: str = field(default="Not assigned", repr=False)
-
+	__nationality: str = field(default="Not assigned", repr=False
+)
 	def __init__(self, name):
 		self.__name = name
 		Customer.__numberOfCustomers += 1

@@ -4,12 +4,12 @@ from Task3 import Food, Drink
 
 @dataclass
 class Customer:
-	__name: str = field(default=0, repr=False)
-	__numberOfCustomers: int = field(default=0, repr=False)
-	__id: int = field(default=0, repr=False)
-	__dateOfBirth: str = field(default="Not assigned", repr=False)
-	__nationality: str = field(default="Not assigned", repr=False)
-	__shopping_list: dict = field(default="Shopping list is empty", repr=False)
+	__name: str = field(default=0)
+	__numberOfCustomers: int = field(default=0)
+	__id: int = field(default=0)
+	__dateOfBirth: str = field(default="Not assigned")
+	__nationality: str = field(default="Not assigned")
+	__shopping_list: dict = field(default="Shopping list is empty")
 
 	def __init__(self, name, shopping_list):
 		self.__name = name
@@ -51,3 +51,5 @@ class Customer:
 
 
 c1 = Customer("Jonas Jonaitis", [Food("Bread", 2, 1.3), Drink("CocaCola", 3, 1.7)])
+
+print(c1.get_full_info)

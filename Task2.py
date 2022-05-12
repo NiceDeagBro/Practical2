@@ -18,4 +18,4 @@ class Item:                                                     # class Item des
         self.dict['name'] = self.name                           # key 'name' equals name of the item
         self.dict['count'] = self.count                         # key 'name' count name of the count
         self.dict['price'] = self.price                         # key 'name' price name of the price
-        return self.dict                                        # Return keys and its values
+        return self.dict                                        # returns keys and its values
