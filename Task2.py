@@ -1,6 +1,5 @@
 from dataclasses import dataclass, field                        # import of additional modules dataclass and field, from library dataclasses.
 
-
 @dataclass                                                      # declaring that this class is going to be dataclass
 class Item:                                                     # class Item describes three item characteristics – name, count and price.
     dict = {}                                                   # declaration of the dictionary.
