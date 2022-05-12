@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from Task3 import Food, Drink
+from Task3 import Food, Drink, Item
 
 
 @dataclass
@@ -49,7 +49,21 @@ class Customer:
 	def get_number_of_customers():
 		return "Number of customers is " + str(Customer.__numberOfCustomers)
 
+	def add_item(self):
+		return self.__shopping_list  									# new item should be inserted here
+		# например return self.__shopping_list.добавить(Food("Kebab", 10, 4.5))
+
+	def remove_item(self):
+		pass
+
+	def get_items(self):
+		pass
+
 
 c1 = Customer("Jonas Jonaitis", [Food("Bread", 2, 1.3), Drink("CocaCola", 3, 1.7)])
+<<<<<<< HEAD
 
 print(c1.get_full_info)
+=======
+print(c1.add_item())
+>>>>>>> a7fba2e99e87a8352ca7c658c107ca08b598701c
