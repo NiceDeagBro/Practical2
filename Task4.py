@@ -9,9 +9,11 @@ class Customer:
 	__id: int = field(default=0)
 	__dateOfBirth: str = field(default="Not assigned")
 	__nationality: str = field(default="Not assigned")
-	__shopping_list: dict = field(default="Shopping list is empty")
+	__shopping_list: list = field(default="Shopping list is empty")
 
-	def __init__(self, name, shopping_list):
+	def __init__(self, name, shopping_list=None):
+		if shopping_list is None:
+			shopping_list = []
 		self.__name = name
 		self.__shopping_list = shopping_list
 		Customer.__numberOfCustomers += 1
@@ -49,9 +51,8 @@ class Customer:
 	def get_number_of_customers():
 		return "Number of customers is " + str(Customer.__numberOfCustomers)
 
-	def add_item(self):
-		self.__shopping_list = Item.full_info
-		return self.__shopping_list  									# new item should be inserted here
+	def add_item(self, item):
+		self.__shopping_list.append(item)
 		# например return self.__shopping_list.добавить(Food("Kebab", 10, 4.5))
 
 	def remove_item(self):
@@ -61,5 +62,6 @@ class Customer:
 		pass
 
 c1 = Customer("Jonas Jonaitis")
+c1.add_item(Food("Kebab", 10, 4.5))
 
-print(c1.get_full_info)
+print(c1.get_full_info())
