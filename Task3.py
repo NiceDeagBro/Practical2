@@ -31,6 +31,7 @@ class Drink(Item):
     def full_info(self):                                                        # method for printing all information about the item (name, count, price, total price).
         return self.name, self.count, self.price, self.get_total_price()        # returns a string with full information of the item.
 
+
 f1 = Food("Bread", 2, price=0.5)    # creating a variable and assigning values for the first item of class Food()
 f2 = Food("Butter", 1, 1.3)         # creating a variable and assigning values for the second item of class Food()
 

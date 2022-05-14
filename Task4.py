@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
-from Task3 import Food, Drink, Item
+
+from Task3 import Drink, Food, Item
 
 
 @dataclass
@@ -9,7 +10,7 @@ class Customer:
 	__id: int = field(default=0)
 	__dateOfBirth: str = field(default="Not assigned")
 	__nationality: str = field(default="Not assigned")
-	__shopping_list: dict = field(default="Shopping list is empty")
+	__shopping_list: list = field(default="Shopping list is empty")
 
 	def __init__(self, name, shopping_list):
 		self.__name = name
@@ -50,16 +51,18 @@ class Customer:
 		return "Number of customers is " + str(Customer.__numberOfCustomers)
 
 	def add_item(self):
-		self.__shopping_list = Item.full_info
-		return self.__shopping_list  									# new item should be inserted here
-		# например return self.__shopping_list.добавить(Food("Kebab", 10, 4.5))
+		# self.__shopping_list = Item.full_info()
+		new_item = Food("Cheeseburger", 2, 3.1)
+		return self.__shopping_list.append(new_item)				# doesn't work
 
 	def remove_item(self):
 		pass
 
 	def get_items(self):
-		pass
+		return self.__shopping_list
 
-c1 = Customer("Jonas Jonaitis")
 
-print(c1.get_full_info)
+c1 = Customer("Jonas Jonaitis", Food("Butter", 1, 1.3))
+# c1.add_item()
+
+print(c1.get_items())
