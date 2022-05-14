@@ -53,15 +53,23 @@ class Customer:
 
 	def add_item(self, item):
 		self.__shopping_list.append(item)
-		# например return self.__shopping_list.добавить(Food("Kebab", 10, 4.5))
 
-	def remove_item(self):
-		pass
+	def remove_item(self, index):
+		if index <= len(self.__shopping_list):
+			del self.__shopping_list[index]
+		else:
+			print('Error deleting an item from the list. There is no item in the list with such index. The maximum index is '
+			  + str(len(self.__shopping_list)) + "\n")
 
 	def get_items(self):
-		pass
+		print("Items in the shopping list: \n")
+		items_list = '\n'.join(map(str, self.__shopping_list))
+		return items_list
 
-c1 = Customer("Jonas Jonaitis")
-c1.add_item(Food("Kebab", 10, 4.5))
 
-print(c1.get_full_info())
+# c1 = Customer("Jonas Jonaitis", [Food("Pizza", 12, 1.5)])
+# c1.add_item(Food("Kebab", 10, 4.5))
+# c1.add_item(Drink("Cola", 2, 1))
+# c1.remove_item(1)
+#
+# print(c1.get_items())
