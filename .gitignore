@@ -1,8 +1,0 @@
-# ignore all hidden files
-.*
-_*
-
-__init__.py
-
-#don't ignore .gitignore
-!.gitignore
