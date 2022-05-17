@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from Task3 import Food, Drink, Item
 import json
+from collections import namedtuple
 
 
 @dataclass
@@ -67,13 +68,13 @@ class Customer:
 		items_list = '\n'.join(map(str, self.__shopping_list))
 		return items_list
 
-	def export_json(self):
+	def export_json(self, path):
 
 		# works, but the formatting is incorrect
 
-		# data = "name: " + self.__name, "identifier: " + str(self.__id), "items: " + ''.join(map(str, self.__shopping_list))
-		# with open('data.json', 'w', encoding='utf-8') as f:
-		# 	json.dump(data, f, ensure_ascii=False, indent=4)
+		data = "name: " + self.__name, "identifier: " + str(self.__id), "items: " + ''.join(map(str, self.__shopping_list))
+		with open(path, 'w', encoding='utf-8') as f:   # use 'data.json' for testing
+			json.dump(data, f, ensure_ascii=False, indent=4)
 
 		# doesn't work, but this method should give me the needed result
 
@@ -81,12 +82,16 @@ class Customer:
 		# with open('data.json', 'w', encoding='utf-8') as f:
 		# 	json.dump(json_str, f, ensure_ascii=False, indent=4)
 
-	# def import_json(self):
-	# 	f = open('data.json')
-	# 	data = json.load(f)
+	def import_json(self, path):
+		f = open(path)                    # use 'data_to_load_from.json' for testing
+		dictionary = json.load(f)
+		customer = namedtuple("Customer", dictionary.keys())(*dictionary.values())
+		self.__name = customer.name
+		self.__id = customer.identifier
+		self.__shopping_list = customer[2]
 
 
-c1 = Customer("Jonas Jonaitis", [Food("Pizza", 12, 1.5)])
-c1.add_item(Drink("Cola", 2, 1))
-c1.add_item(Drink("Sprite", 2, 1))
-c1.export_json()
+# c1 = Customer("Jonas Jonaitis", [Food("Pizza", 12, 1.5)])
+# c1.add_item([Drink("cola", 5, 2)])
+# c1.add_item([Drink("kek", 5, 2)])
+# c1.export_json("data.json")
