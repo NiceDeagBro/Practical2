@@ -47,13 +47,13 @@ class Customer:
 		return "Number of customers is " + str(Customer.__numberOfCustomers)
 
 
+# --------DEMO--------
+
 # creating 3 instances of a class Customer passing different names
 
 # c1 = Customer("Pavel Yushkevich")
 # c2 = Customer("Sevastian Zare")
 # c3 = Customer("Kiryl Andreyeu")
-
-# --------DEMO--------
 
 # PRINTING ID's of the customers
 # print(c1.get_identifier())

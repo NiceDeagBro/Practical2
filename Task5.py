@@ -6,6 +6,7 @@ from collections import namedtuple
 
 @dataclass
 class Customer:
+	# all the variables with the class are private
 	__name: str = field(default=0)
 	__numberOfCustomers: int = field(default=0)
 	__id: int = field(default=0)
@@ -13,13 +14,13 @@ class Customer:
 	__nationality: str = field(default="Not assigned")
 	__shopping_list: list = field(default="Shopping list is empty")
 
-	def __init__(self, name, shopping_list=None):
+	def __init__(self, name, shopping_list=None):     # constructor accepts customer name and shopping cart
 		if shopping_list is None:
 			shopping_list = []
 		self.__name = name
 		self.__shopping_list = shopping_list
-		Customer.__numberOfCustomers += 1
-		self.__id = (Customer.__numberOfCustomers - 1) + 1
+		Customer.__numberOfCustomers += 1             # number of customers is tracked here
+		self.__id = (Customer.__numberOfCustomers - 1) + 1    # id of customers is tracked here
 
 	# method returning id of an instance
 	def get_identifier(self):
@@ -53,9 +54,11 @@ class Customer:
 	def get_number_of_customers():
 		return "Number of customers is " + str(Customer.__numberOfCustomers)
 
+	# method for adding an item to the customer shopping list
 	def add_item(self, item):
 		self.__shopping_list.append(item)
 
+	# method for removing an item from the customer shopping list
 	def remove_item(self, index):
 		if index <= len(self.__shopping_list):
 			del self.__shopping_list[index]
@@ -63,11 +66,13 @@ class Customer:
 			print('Error deleting an item from the list. There is no item in the list with such index. The maximum index is '
 			  + str(len(self.__shopping_list)) + "\n")
 
+	# method returning the items in customer shopping list
 	def get_items(self):
 		print("Items in the shopping list: \n")
 		items_list = '\n'.join(map(str, self.__shopping_list))
 		return items_list
 
+	# method for exporting customer data to JSON file
 	def export_json(self, path):
 
 		# works, but the formatting is incorrect
@@ -82,6 +87,7 @@ class Customer:
 		# with open('data.json', 'w', encoding='utf-8') as f:
 		# 	json.dump(json_str, f, ensure_ascii=False, indent=4)
 
+	# method for importing customer data from JSON file
 	def import_json(self, path):
 		f = open(path)                    # use 'data_to_load_from.json' for testing
 		dictionary = json.load(f)
@@ -91,7 +97,16 @@ class Customer:
 		self.__shopping_list = customer[2]
 
 
+# --------DEMO--------
+# CREATING AN INSTANCE OF A CLASS CUSTOMER PASSING NAME AND ITEM
 # c1 = Customer("Jonas Jonaitis", [Food("Pizza", 12, 1.5)])
+
+# ADDING TWO DIFFERENT ITEMS TO THE SHOPPING CART
 # c1.add_item([Drink("cola", 5, 2)])
 # c1.add_item([Drink("kek", 5, 2)])
+
+# EXPORTING CUSTOMER DATA TO JSON FILE
 # c1.export_json("data.json")
+
+# IMPORT CUSTOMER DATA FROM JSON FILE
+# c1.import_json("data_to_load_from.json")
