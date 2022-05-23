@@ -99,14 +99,18 @@ class Customer:
 
 # --------DEMO--------
 # CREATING AN INSTANCE OF A CLASS CUSTOMER PASSING NAME AND ITEM
-# c1 = Customer("Jonas Jonaitis", [Food("Pizza", 12, 1.5)])
+c1 = Customer("Jonas Jonaitis", [Food("Pizza", 12, 1.5)])
 
 # ADDING TWO DIFFERENT ITEMS TO THE SHOPPING CART
 # c1.add_item([Drink("cola", 5, 2)])
-# c1.add_item([Drink("kek", 5, 2)])
+# c1.add_item([Drink("water", 5, 2)])
 
 # EXPORTING CUSTOMER DATA TO JSON FILE
 # c1.export_json("data.json")
 
 # IMPORT CUSTOMER DATA FROM JSON FILE
 # c1.import_json("data_to_load_from.json")
+
+# PRINT LOADED CUSTOMER DATA
+# print(c1.get_full_info())
+# print(c1.get_items())

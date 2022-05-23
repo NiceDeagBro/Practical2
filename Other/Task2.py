@@ -1,4 +1,3 @@
-
 def filter_list(one_d_list):
 	filtered = []
 
@@ -20,9 +19,9 @@ def filter_two_d_list(two_d_list):
 		print(filtered)
 
 
-# print(filter_list([1, 10, 34, 110, 400, 30, 20, 100, 101, 9, 11, 10]))
-# filter_two_d_list([
-#     [1, 10, 34, 110, 400, 30, 20],
-#     [-5, -10, 55, 120, 30],
-#     [2, 67, 23, 78, 200],
-# ])
+print(filter_list([1, 10, 34, 110, 400, 30, 20, 100, 101, 9, 11, 10]))
+filter_two_d_list([
+    [1, 10, 34, 110, 400, 30, 20],
+    [-5, -10, 55, 120, 30],
+    [2, 67, 23, 78, 200],
+])

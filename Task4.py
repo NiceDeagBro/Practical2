@@ -70,16 +70,17 @@ class Customer:
 		items_list = '\n'.join(map(str, self.__shopping_list))
 		return items_list
 
+
 # --------DEMO--------
 # CREATING AN INSTANCE OF A CLASS CUSTOMER PASSING NAME AND ITEM
-# c1 = Customer("Jonas Jonaitis", [Food("Pizza", 12, 1.5)])
+c1 = Customer("Jonas Jonaitis", [Food("Pizza", 12, 1.5)])
 
 # ADDING TWO DIFFERENT ITEMS TO THE SHOPPING CART
-# c1.add_item(Food("Kebab", 10, 4.5))
-# c1.add_item(Drink("Cola", 2, 1))
+c1.add_item(Food("Kebab", 10, 4.5))
+c1.add_item(Drink("Cola", 2, 1))
 
 # REMOVING THE ITEM WITH INDEX 1 FROM THE SHOPPING CART
-# c1.remove_item(1)
+c1.remove_item(1)
 
 # PRINTING ALL ITEMS FROM THE CUSTOMER SHOPPING LIST
-# print(c1.get_items())
+print(c1.get_items())

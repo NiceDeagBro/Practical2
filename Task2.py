@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field                        # import of additional modules dataclass and field, from library dataclasses.
 
+
 @dataclass                                                      # declaring that this class is going to be dataclass
 class Item:                                                     # class Item describes three item characteristics – name, count and price.
     dict = {}                                                   # declaration of the dictionary.
@@ -19,6 +20,7 @@ class Item:                                                     # class Item des
         self.dict['count'] = self.count                         # key 'name' count name of the count
         self.dict['price'] = self.price                         # key 'name' price name of the price
         return self.dict                                        # returns keys and its values
+
 
 i1 = Item("Carrots")
 i2 = Item("Milk", 2, 1.5)
